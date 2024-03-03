@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className='overflow-hidden cursor-pointer'>
+      <div className='overflow-hidden'>
         <Navbar />
         <div className="mt-[74px] md:mt-[78.5px]">
 
@@ -58,9 +58,7 @@ export default async function Home() {
         </div>
 
         {/* Footer */}
-        <div>
-          <Footer />
-        </div>
+        <Footer />
       </div >
     </>
   )
