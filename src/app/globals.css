@@ -2,32 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.flex-center {
+    @apply flex items-center justify-center
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #000;
+}
+
+
+.swiper-button-next {
+    right: 0 !important;
+}
+
+.swiper-button-prev {
+    left: 0 !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: gray !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: white !important;
+    width: 15px !important;
+    height: 15px !important;
+}
+
+@layer utilities {
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+    display: none;
+}
+
+.loader-wraper {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border-top: 5px solid red;
+    border-left: 3px solid brown;
+    border-bottom: 1px solid purple;
+    border-right: transparent;
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.scrollDown {
+    transform: translateY(-100px);
+    opacity: 0;
 }
