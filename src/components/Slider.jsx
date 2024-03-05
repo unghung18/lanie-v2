@@ -2,12 +2,8 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import Link from 'next/link';
-
-import slider1 from '../assets/slider1.webp';
-import slider2 from '../assets/slider2.webp';
-import Image from 'next/image';
 
 const myslides = [
     {
@@ -15,14 +11,14 @@ const myslides = [
         name: "denim jacket",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
         price: "20$",
-        image: slider1
+        image: "/slider1.webp"
     },
     {
         title: "new arrivals",
         name: "denim jacket",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
         price: "20$",
-        image: slider2
+        image: "/slider2.webp"
     }
 ]
 
@@ -47,7 +43,7 @@ const Slider = () => {
                 <SwiperSlide key={i} className='!w-full'>
                     {({ isActive }) => (
                         <>
-                            <Image src={slide.image} alt="avatar" className='object-cover h-full' />
+                            <img src={slide.image} alt="avatar" className='object-cover h-full' />
                             <div className="absolute mx-[30px] my-[100px] md:m-[100px] top-0 left-0">
                                 <div className='flex justify-between items-center text-white'>
                                     <div className='md:w-[50%]'>

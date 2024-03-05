@@ -5,19 +5,19 @@ import SwiperSimilarProduct from '@/components/SwiperSimilarProduct';
 import { getLatestProducts, getOneProducts } from '@/api/LanieApi';
 import ProductDetail from './ProductDetail';
 
+async function getData(id) {
+    const res = await getOneProducts(id)
+    return res.data
+}
+
+async function getSimilarProductData() {
+    const res = await getLatestProducts()
+    return res.data
+}
+
 const Page = async ({ params }) => {
 
-    async function getData() {
-        const res = await getOneProducts(params.id)
-        return res.data
-    }
-
-    async function getSimilarProductData() {
-        const res = await getLatestProducts()
-        return res.data
-    }
-
-    const product = await getData();
+    const product = await getData(params.id);
     const similarProducts = await getSimilarProductData()
 
     return (

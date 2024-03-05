@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 const ProductCard = ({ data }) => {
 
@@ -15,7 +14,7 @@ const ProductCard = ({ data }) => {
                 <Link href={`/products/${data._id}`}>
                     <div className='relative group rounded-lg overflow-hidden'>
                         {data.sale != 0 && <span className='absolute right-[10px] top-[10px] text-[10px] font-semibold text-white bg-[#50e550] rounded-[15px] px-2 pt-1'>ON SALE</span>}
-                        <Image src={data.images[0]} alt={data.title} width={500} height={500} className='w-full' />
+                        <img src={data.images[0]} alt={data.title} />
                         <div className=" absolute bottom-full left-0 right-0 bg-black/50 overflow-hidden w-full h-0 transition-all !duration-500 group-hover:bottom-0 group-hover:h-full justify-center items-center hidden md:flex">
                             <button onClick={() => router.push(`/products/${data._id}`)} className="bg-[#000] text-white text-center w-[80%] inline-block bg-transparent text-[16px] border-[1px] border-solid border-[#fff] py-2 px-5 hover:bg-[#fff] hover:text-[#000] font-semibold">XEM THÊM</button>
                         </div>

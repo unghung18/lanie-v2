@@ -1,8 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import payImg from '../assets/payImage.webp';
 import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter } from 'react-icons/fa';
-import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -16,7 +14,7 @@ const Footer = () => {
                     <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus
                         urna, id dapibus erat iaculis ut. Integer ac sem.
                     </p>
-                    <Image src={payImg} alt='pay-img' className="w-[70%] mt-[50px]" />
+                    <img src="/payImage.webp" alt='pay-img' className="w-[70%] mt-[50px]" />
                 </div>
                 <div className='px-4 mb-[60px] text-[#8f8f8f]'>
                     <h2 className="text-[18px] font-bold text-white mb-[45px]">Giải Đáp</h2>

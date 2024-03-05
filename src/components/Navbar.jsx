@@ -17,9 +17,6 @@ import { CgProfile } from "react-icons/cg";
 import { cartActions } from '@/redux/slices/cartSlice';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter, usePathname } from 'next/navigation';
-import Image from 'next/image';
-import emptycart from "../assets/emptycart.png"
-import logo from '../assets/logo.jpeg';
 
 const Navbar = () => {
     const [showNav, setShowNav] = useState(false);
@@ -91,7 +88,7 @@ const Navbar = () => {
             <div className='flex items-center justify-between py-4 relative px-5 max-w-[1280px] mx-auto'>
                 <div className='flex items-center space-x-10 lg:space-x-20'>
                     <Link href="/" className='cursor-pointer'>
-                        <Image src={logo} alt='logo' width={60} />
+                        <img src={"/logo.jpeg"} alt='logo' className='w-[60px]' />
                     </Link>
                     <nav className='max-md:hidden'>
                         <ul className='flex items-center lg:space-x-10 space-x-7 max-[850px]:space-x-5 opacity-70 text-[15px]'>
@@ -150,7 +147,7 @@ const Navbar = () => {
                             {cartProducts.length == 0 ?
                                 <div className='h-[300px] flex-center flex-col'>
                                     <div className='relative w-[100px] h-[100px] flex-center bg-slate-200 rounded-full mb-4'>
-                                        <Image src={emptycart} alt="empty cart" fill={true} />
+                                        <img src={"/emptycart.png"} alt="empty cart" />
                                     </div>
                                     <p> Giỏ hàng trống</p>
                                 </div>
